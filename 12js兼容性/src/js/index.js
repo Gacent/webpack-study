@@ -11,3 +11,12 @@ const ps = new Promise((resolve) => {
     resolve();
   }, 1000);
 });
+
+class A {
+  constructor() {
+    this.a = 123;
+  }
+}
+
+const aa = new A();
+console.log(aa.a);

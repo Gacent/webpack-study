@@ -5,14 +5,14 @@
  * 2. 全部js兼容性处理--> @babel/polyfill  问题：只要解决部分兼容性问题，但是将所有兼容性代码全部引入，体积太大
  * 3. 按需处理加载-->  core-js 需要禁了第二个方案
  */
-const { resolve } = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { resolve } = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/js/index.js',
   output: {
     filename: 'js/build.js',
-    path: resolve(__dirname, 'build'),
+    path: resolve(__dirname, 'build')
   },
   module: {
     rules: [
@@ -30,7 +30,7 @@ module.exports = {
                 useBuiltIns: 'usage',
                 // 指定corejs版本
                 corejs: {
-                  version: 3,
+                  version: 3
                 },
                 // 指定兼容性做到哪个版本
                 targets: {
@@ -38,19 +38,19 @@ module.exports = {
                   firefox: '60',
                   ie: '9',
                   safari: '10',
-                  edge: '17',
-                },
-              },
-            ],
-          ],
-        },
-      },
-    ],
+                  edge: '17'
+                }
+              }
+            ]
+          ]
+        }
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
+      template: './src/index.html'
+    })
   ],
-  mode: 'development',
-};
+  mode: 'development'
+}
